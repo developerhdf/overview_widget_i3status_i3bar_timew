@@ -32,4 +32,4 @@ not required, please comment out the relevant code. I wrote the script on Arch
 Linux and am not aware of any other "dependencies", but should any be 
 discovered I will greatly appreciate being notified of the fact.
 
-![Image of i3status_widget demonstration]
+![Image of i3status_widget]
