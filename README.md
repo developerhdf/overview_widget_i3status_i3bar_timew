@@ -1,5 +1,10 @@
 # i3status_widget
-Creates a simple system monitor type widget for i3 + i3bar + i3status
+
+![Image of i3status_widget](https://github.com/developerhdf/i3status_widget/blob/master/i3status_widget.png)
+
+A simple system monitor type widget for i3 + i3bar + i3status.
+
+To see a more detailed demonstration of the widget, please look [here](https://github.com/developerhdf/i3status_widget/blob/master/demonstration.png).
 
 ## Getting it to run:
 
@@ -31,5 +36,3 @@ errors on computers without batteries. If time/task and battery monitoring is
 not required, please comment out the relevant code. I wrote the script on Arch 
 Linux and am not aware of any other "dependencies", but should any be 
 discovered I will greatly appreciate being notified of the fact.
-
-![Image of i3status_widget]
