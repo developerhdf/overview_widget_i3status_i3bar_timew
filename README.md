@@ -1,10 +1,10 @@
-# i3status_widget
+# overview_widget.sh
 
-![Image of i3status_widget](https://github.com/developerhdf/i3status_widget/blob/master/i3status_widget.png)
+![Image of overview_widget](https://github.com/developerhdf/overview_widget/blob/master/i3status_widget.png)
 
 A simple system monitor type widget for i3 + i3bar + i3status.
 
-To see a more detailed demonstration of the widget, please look [here](https://github.com/developerhdf/i3status_widget/blob/master/demonstration.png).
+To see a more detailed demonstration of the widget, please look [here](https://github.com/developerhdf/overview_widget/blob/master/demonstration.png).
 
 ## Getting it to run:
 
