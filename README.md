@@ -1,6 +1,6 @@
 # overview_widget.sh
 
-![Image of overview_widget](https://github.com/developerhdf/overview_widget/blob/master/i3status_widget.png)
+![Image of overview_widget](https://github.com/developerhdf/overview_widget/blob/master/overview_widget.png)
 
 A simple system monitor type widget for i3 + i3bar + i3status.
 
