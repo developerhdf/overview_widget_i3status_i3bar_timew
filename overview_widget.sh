@@ -93,6 +93,18 @@ i3statusOutput=''
 i3barOutput=''
 skipDataUpdate=false
 
+writeToLog() {
+  if [ "$#" = 2 ]
+  then
+    $(echo $1 >> $2)
+  else
+    if [ "$#" = 1 ]
+    then
+      $(echo $1 >> ~/overview_widget.log)
+    fi
+  fi
+}
+
 resetVariables() {
   cpuStrain=false
   ramStrain=false
@@ -157,7 +169,7 @@ updateMyWidget() {
     read i3statusOutput <&3
   fi
   updateData  
-  i3barInput=$(sed -r "s/^(,{0,1}\[)(\{)(.*)/\1$system_state_summary\2\3/g" <<< $i3statusOutput)
+  i3barInput=$(sed -r "s/^(,\[|\[)(\{)(.*)/\1$system_state_summary\2\3/g" <<< $i3statusOutput)
 }
 
 i3barUpdate() {
@@ -166,6 +178,7 @@ i3barUpdate() {
     i3barInput=$1
   fi
   echo $i3barInput
+  #writeToLog "$i3statusOutput"
 }
 
 i3statusCapture() {
@@ -646,13 +659,13 @@ updateTimewData() {
   if [[ $testState = '' ]]
   then
     timewTracking=true
-    timewTasks=$(grep "Tracking" <<< "$timewData" | sed -r 's/^Tracking //' | sed -r "s/\"/'/g")
+    timewTasks=$(grep "Tracking" <<< "$timewData" | sed -r 's/^Tracking //' | sed -r "s/\"/'/g" | sed -r "s/\&/\\\&/g")
     timewTotal=$(tail -n 1 <<< "$timewData" | awk '{print $NF}')
   else
     timewTracking=false
     if [[ $timewTasks = '' ]]
     then
-      timewTasks=$(timew export | tail -n 2 | head -n 1 | sed -r 's/.*:\[(.*)\]\}/\1/' | sed -r "s/(\",\")/' '/g" | sed -r "s/\"/'/"g)
+      timewTasks=$(timew export | tail -n 2 | head -n 1 | sed -r 's/.*:\[(.*)\]\}/\1/' | sed -r "s/(\",\")/' '/g" | sed -r "s/\"/'/"g | sed -r "s/\&/\\\&/g")
     fi
   fi
 }
